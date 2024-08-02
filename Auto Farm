@@ -1,5 +1,5 @@
 local gui = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/z4gs/scripts/master/testtttt.lua"))():AddWindow("MAYURI HUB", {
-    main_color = Color3.fromRGB(255,0,255),
+    main_color = Color3.fromRGB(102,0,51),
     min_size = Vector2.new(340, 340),
     can_resize = true
 })
