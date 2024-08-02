@@ -46,8 +46,7 @@ local array = {
         ["Gyakusatsu"] = 1250,
         ["Eto Yoshimura"] = 1250,
         ["Koutarou Amon"] = 750,
-        ["Nishiki Nishio"] = 250,
-        ["Touka Kirishima"] = 250,
+        ["Nishiki Nishio/Touka Kirishima"] = 250,
     },
 
     npcs = {["Aogiri Members"] = "GhoulSpawns", Investigators = "CCGSpawns", Humans = "HumanSpawns"},
