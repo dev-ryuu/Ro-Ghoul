@@ -146,7 +146,7 @@ tab2:AddSwitch("Auto Reputation Cashout", function(bool)
 end):Set(myData.ReputationCashout)
 
 for i,v in pairs(array.boss) do
-    tab5:AddSwitch(i.." Boss Farm ".."(".."lvl "..v.."+)", function(bool)
+    tab2:AddSwitch(i.." Boss Farm ".."(".."lvl "..v.."+)", function(bool)
         myData.Boss[i] = bool
     end):Set(myData.Boss[i])
 end
