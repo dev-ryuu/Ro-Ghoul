@@ -1,5 +1,5 @@
 local gui = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/z4gs/scripts/master/testtttt.lua"))():AddWindow("MAYURI HUB", {
-    main_color = Color3.fromRGB(110,21,98),
+    main_color = Color3.fromRGB(255,0,255),
     min_size = Vector2.new(340, 340),
     can_resize = true
 })
@@ -30,13 +30,13 @@ local myData = loadstring(game:HttpGet("https://raw.githubusercontent.com/z4gs/s
     Boss = {
         ["Gyakusatsu"] = false,
         ["Eto Yoshimura"] = false,
-        ["Koutarou Amon"] = false,
+        ["Koutarou Amon"] = true,
         ["Nishiki Nishio"] = true,
         ["Touka Kirishima"] = true
     },
     DistanceFromNpc = 5,
-    DistanceFromBoss = 8,
-    TeleportSpeed = 150,
+    DistanceFromBoss = -5,
+    TeleportSpeed = 250,
     ReputationFarm = false,
     ReputationCashout = false,
     AutoKickWhitelist = ""
