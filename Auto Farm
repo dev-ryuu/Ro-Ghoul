@@ -1,4 +1,4 @@
-local gui = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/z4gs/scripts/master/testtttt.lua"))():AddWindow("WHY YOU HACKING?", {
+local gui = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/z4gs/scripts/master/testtttt.lua"))():AddWindow("Ro-Ghoul", {
     main_color = Color3.fromRGB(0,0,0),
     min_size = Vector2.new(340, 340),
     can_resize = false
@@ -10,7 +10,7 @@ local get = setmetatable({}, {
     end
 })
 
-local tab1, tab2, tab3, tab4 tab5 = gui:AddTab("Main"), gui:AddTab("Farm Options"), gui:AddTab("Trainer"), gui:AddTab("Misc"), gui:AddTab("Bosses")
+local tab1, tab2, tab3, tab4 = gui:AddTab("Main"), gui:AddTab("Farm Options"), gui:AddTab("Trainer"), gui:AddTab("Misc"), gui:AddTab("Bosses")
 local btn, btn2, btn3, key, nmc, trainers, labels
 local findobj, findobjofclass, waitforobj, fire, invoke = get.FindFirstChild, get.FindFirstChildOfClass, get.WaitForChild, Instance.new("RemoteEvent").FireServer, Instance.new("RemoteFunction").InvokeServer
 local player = get.Players.LocalPlayer
@@ -31,12 +31,12 @@ local myData = loadstring(game:HttpGet("https://raw.githubusercontent.com/z4gs/s
         ["Gyakusatsu"] = false,
         ["Eto Yoshimura"] = false,
         ["Koutarou Amon"] = false,
-        ["Nishiki Nishio] = true,
-        ["Touka Kirishima"] = true,
+        ["Nishiki Nishio"] = true
+        ["Touka Kirishima"] = true
     },
     DistanceFromNpc = 5,
-    DistanceFromBoss = 30,
-    TeleportSpeed = 300,
+    DistanceFromBoss = 8,
+    TeleportSpeed = 150,
     ReputationFarm = false,
     ReputationCashout = false,
     AutoKickWhitelist = ""
@@ -48,7 +48,7 @@ local array = {
         ["Eto Yoshimura"] = 1250,
         ["Koutarou Amon"] = 750,
         ["Nishiki Nishio"] = 250,
-        ["Touka Kirishima"] = 250,
+        ["Touka Kirishima"] = 250
     },
 
     npcs = {["Aogiri Members"] = "GhoulSpawns", Investigators = "CCGSpawns", Humans = "HumanSpawns"},
@@ -59,7 +59,7 @@ local array = {
         E = player.PlayerFolder.Special1CD,
         F = player.PlayerFolder.Special3CD,
         C = player.PlayerFolder.SpecialBonusCD,
-        R = player.PlayerFolder.Special2CD,
+        R = player.PlayerFolder.Special2CD
     }
 }
 
@@ -145,17 +145,23 @@ tab2:AddSwitch("Auto Reputation Cashout", function(bool)
     myData.ReputationCashout = bool
 end):Set(myData.ReputationCashout)
 
+for i,v in pairs(array.boss) do
+    tab5:AddSwitch(i.." Boss Farm ".."(".."lvl "..v.."+)", function(bool)
+        myData.Boss[i] = bool
+    end):Set(myData.Boss[i])
+end
+
 tab2:AddSlider("TP Speed", function(x)
     myData.TeleportSpeed = x
-end, {min = 90, max = 300}):Set(50)
+end, {min = 90, max = 250}):Set(45)
 
 tab2:AddSlider("Distance from NPC", function(x)
     myData.DistanceFromNpc = x * -1
-end, {min = 0, max = 10}):Set(65)
+end, {min = 0, max = 8}):Set(65)
 
 tab2:AddSlider("Distance from Bosses", function(x)
     myData.DistanceFromBoss = x * -1
-end, {min = 0, max = 30}):Set(55)
+end, {min = 0, max = 15}):Set(55)
 
 labels.p = {label = tab3:AddLabel("Current trainer: "..player.PlayerFolder.Trainers[team.."Trainer"].Value)}
 
@@ -244,12 +250,6 @@ do
         if v.ClassName == "Frame" and v.Name ~= "Example" then
             count = count + 1
             drop2:Add(count)
-        end
-
-        for i,v in pairs(array.boss) do
-            tab5:AddSwitch(i.." Boss Farm ".."(".."lvl "..v.."+)", function(bool)
-            myData.Boss[i] = bool
-            end):Set(myData.Boss[i])
         end
     end
 end
