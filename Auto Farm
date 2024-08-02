@@ -31,7 +31,7 @@ local myData = loadstring(game:HttpGet("https://raw.githubusercontent.com/z4gs/s
         ["Gyakusatsu"] = false,
         ["Eto Yoshimura"] = false,
         ["Koutarou Amon"] = false,
-        ["Nishiki Nishio"] = false,
+        ["Nishiki Nishio/Touka Kirishima"] = true,
         ["Touka Kirishima"] = true,
     },
     DistanceFromNpc = 5,
