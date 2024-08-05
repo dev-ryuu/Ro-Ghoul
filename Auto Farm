@@ -160,7 +160,7 @@ tab2:AddSlider("Distance from NPC", function(x)
 end, {min = 0, max = 8}):Set(65)
 
 tab2:AddSlider("Distance from Bosses", function(y)
-    myData.DistanceFromBoss = y * -1
+    myData.DistanceFromBoss = y * -5
 end, {min = 0, max = 15}):Set(55)
 
 labels.p = {label = tab3:AddLabel("Current trainer: "..player.PlayerFolder.Trainers[team.."Trainer"].Value)}
