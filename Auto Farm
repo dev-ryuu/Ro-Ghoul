@@ -152,7 +152,7 @@ for i,v in pairs(array.boss) do
 end
 
 tab2:AddSlider("TP Speed", function(x)
-    myData.TeleportSpeed = x * 250
+    myData.TeleportSpeed = x
 end, {min = 90, max = 250}):Set(45)
 
 tab2:AddSlider("Distance from NPC", function(x)
