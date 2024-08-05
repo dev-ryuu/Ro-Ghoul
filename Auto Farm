@@ -159,8 +159,8 @@ tab2:AddSlider("Distance from NPC", function(x)
     myData.DistanceFromNpc = x * -1
 end, {min = 0, max = 10}):Set(65)
 
-tab2:AddSlider("Distance from Bosses", function(y)
-    myData.DistanceFromBoss = x
+tab2:AddSlider("Distance from Bosses", function(x)
+    myData.DistanceFromBoss = x -1
 end, {min = 0, max = 15}):Set(90)
 
 labels.p = {label = tab3:AddLabel("Current trainer: "..player.PlayerFolder.Trainers[team.."Trainer"].Value)}
@@ -270,7 +270,7 @@ local function tp(pos)
 
     local tween = game:GetService("TweenService"):Create(
         val, 
-        TweenInfo.new((player.Character.HumanoidRootPart.Position - pos.p).magnitude / myData.TeleportSpeed, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, false, 0), 
+        TweenInfo.new((player.Character.HumanoidRootPart.Position - pos.p).magnitude / myData.TeleportSpeed, Enum.EasingStyle.Linear, Enum.EasingDirection.Out, 0, true, 0), 
         {Value = pos}
     )
 
