@@ -153,15 +153,15 @@ end
 
 tab2:AddSlider("TP Speed", function(x)
     myData.TeleportSpeed = x
-end, {min = 90, max = 250}):Set(100)
+end, {min = 90, max = 300}):Set(95)
 
 tab2:AddSlider("Distance from NPC", function(x)
     myData.DistanceFromNpc = x * -1
 end, {min = 0, max = 10}):Set(65)
 
 tab2:AddSlider("Distance from Bosses", function(y)
-    myData.DistanceFromBoss = x * -1
-end, {min = 0, max = 15}):Set(65)
+    myData.DistanceFromBoss = x
+end, {min = 0, max = 15}):Set(90)
 
 labels.p = {label = tab3:AddLabel("Current trainer: "..player.PlayerFolder.Trainers[team.."Trainer"].Value)}
 
